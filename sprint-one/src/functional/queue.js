@@ -5,7 +5,7 @@ var Queue = function() {
   var storage = {};
 
   // Implement the methods below
-test
+
   someInstance.enqueue = function(value) {
   };
 
