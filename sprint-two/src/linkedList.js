@@ -15,17 +15,12 @@ var LinkedList = function() {
 
   list.removeHead = function() {
     var removed = list.head.value;
-    // console.log(list);
-    // console.log(removed);
-    // delete list.head;
     list.head = list.head.next;
-    // list.removed = null;
     return removed;
   };
 
   list.contains = function(target) {
     var currentNode = list.head;
-
     while (currentNode !== null) {
       if (currentNode.value === target) {
         return true;
