@@ -23,6 +23,12 @@ describe('linkedList', function() {
     expect(linkedList.tail.value).to.equal(5);
   });
 
+  it('should return false when the node is not the tail', function() {
+    linkedList.addToTail(8);
+    linkedList.addToTail(10);
+    expect(linkedList.tail.value).not.to.equal(8);
+  });
+
   it('should remove the head from the list when removeHead is called', function() {
     linkedList.addToTail(4);
     linkedList.addToTail(5);

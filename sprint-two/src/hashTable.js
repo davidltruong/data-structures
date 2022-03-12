@@ -7,6 +7,12 @@ var HashTable = function() {
 };
 
 HashTable.prototype.insert = function(k, v) {
+  if (typeof k !== 'string') {
+    k = JSON.stringify(k);
+  }
+  if (typeof v !== 'string') {
+    v = JSON.stringify(v);
+  }
   var index = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(index);
   var bool = false;
@@ -28,6 +34,9 @@ HashTable.prototype.insert = function(k, v) {
 };
 
 HashTable.prototype.retrieve = function(k) {
+  if (typeof k !== 'string') {
+    k = JSON.stringify(k);
+  }
   var index = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(index);
   var result;
@@ -40,6 +49,9 @@ HashTable.prototype.retrieve = function(k) {
 };
 
 HashTable.prototype.remove = function(k) {
+  if (typeof k !== 'string') {
+    k = JSON.stringify(k);
+  }
   var index = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(index);
   this._storage.each(function (value, key, collection) {

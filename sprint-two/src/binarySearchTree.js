@@ -10,6 +10,7 @@ var BinarySearchTree = function(value) {
 var tree = {};
 
 tree.insert = function(value) {
+  value = Math.floor(value);
   if (value < this.value) {
     if (this.left === null) {
       this.left = new BinarySearchTree(value);
@@ -26,7 +27,6 @@ tree.insert = function(value) {
 };
 
 tree.contains = function(value) {
-  console.log(value);
   if (value === this.value) {
     return true;
   } else if (value < this.value) {

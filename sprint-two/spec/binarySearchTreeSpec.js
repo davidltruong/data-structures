@@ -37,4 +37,12 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should insert values rounded down if value is a decimal', function() {
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(7);
+    binarySearchTree.insert(6.5);
+    expect(binarySearchTree.right.left.value).to.equal(6);
+  });
 });
