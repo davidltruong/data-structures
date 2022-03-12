@@ -37,7 +37,6 @@ Graph.prototype.removeNode = function(node) {
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromNode, toNode) {
-  console.log(this.nodes);
   for (var i = 0; i < this.nodes.length; i++) {
     if (fromNode === this.nodes[i].value && this.nodes[i].edges.includes(toNode)) {
       return true;
@@ -65,7 +64,6 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
   for (var i = 0; i < this.nodes.length; i++) {
     if (fromNode === this.nodes[i].value) {
       var edgeNodeIndex = this.nodes[i].edges.indexOf(toNode);
-      console.log(edgeNodeIndex);
       this.nodes[i].edges.splice(edgeNodeIndex, 1);
     }
   }
